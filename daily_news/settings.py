@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # local apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'articles.apps.ArticlesConfig',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,5 @@ EMAIL_HOST_PASSWORD = 'aa522da2efb1cc'
 EMAIL_PORT = '2525'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'noreply@gmail.com'
+
+TIME_ZONE = "Asia/Dhaka"
