@@ -1,6 +1,7 @@
 <!-- templates/home.html -->
 
 {% extends "base.html" %}
+{% load socialaccount %}
 
 {% block title %}Home{% endblock title %}
 {% block content %}
@@ -14,7 +15,8 @@
 {% else %}
     <p>You are not logged in</p>
     <a href="{% url 'login' %}">Log In</a> |
-    <a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
+    <a href="{% url 'signup' %}">Sign Up</a> <br>
+    <p><a class="text-decoration-none" href="{% provider_login_url 'google' %}">Login with google</a></p>
+    {% endif %}
 
 {% endblock content %}

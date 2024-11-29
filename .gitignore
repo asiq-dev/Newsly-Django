@@ -3,3 +3,4 @@ __pycache__/
 *.sqlite3
 *.vscode
 daily_news/local_settings.py
+client_secret_google_login.json
