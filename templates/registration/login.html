@@ -1,6 +1,7 @@
 <!-- templates/registration/login.html -->
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
 
 {% block title %}Log In{% endblock title %}
 
@@ -8,6 +9,11 @@
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4" style="max-width: 600px; width: 100%;">
         <h2 class="text-center mb-4">Log In</h2>
+        <div class="text-center mb-4">
+            <a class="btn btn-outline-danger w-100" href="{% provider_login_url 'google'%}">
+                <i class="bi bi-google"></i> Log In with Google
+            </a>
+        </div>
         <form method="post">{% csrf_token %}
             {{ form|crispy }}
             <button class="btn btn-success ml-2" type="submit">Log In</button>

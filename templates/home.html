@@ -1,22 +1,53 @@
-<!-- templates/home.html -->
 
 {% extends "base.html" %}
-{% load socialaccount %}
-
+{% load static %}
 {% block title %}Home{% endblock title %}
+
 {% block content %}
+<!-- Hero Section -->
+<div class="bg-light text-center py-5">
+    <h1 class="display-4">Welcome to Newsly</h1>
+    <p class="lead">Stay updated with the latest news around the world</p>
+    <a href="#news" class="btn btn-primary btn-lg">Explore News</a>
+</div>
 
-{% if user.is_authenticated %}
-    Hi {{ user.username }}! You are {{user.age}} years old. <br><br>
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Log Out</button>
-    </form>
-{% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a> |
-    <a href="{% url 'signup' %}">Sign Up</a> <br>
-    <p><a class="text-decoration-none" href="{% provider_login_url 'google' %}">Login with google</a></p>
-    {% endif %}
-
+<!-- News Articles Section -->
+<div class="container my-5" id="news">
+    <h2 class="mb-4">Latest News</h2>
+    <div class="row">
+        <!-- News Card 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'images/news1.jpg' %}" class="card-img-top" alt="News 1">
+                <div class="card-body">
+                    <h5 class="card-title">News Title 1</h5>
+                    <p class="card-text">Short description of the news goes here. It provides a quick overview of the article.</p>
+                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!-- News Card 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'images/news2.png' %}" class="card-img-top" alt="News 2">
+                <div class="card-body">
+                    <h5 class="card-title">News Title 2</h5>
+                    <p class="card-text">Another quick summary of a different news article, engaging and informative.</p>
+                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!-- News Card 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'images/news3.jpg' %}" class="card-img-top" alt="News 3">
+                <div class="card-body">
+                    <h5 class="card-title">News Title 3</h5>
+                    <p class="card-text">Brief details about another article to entice users to click and learn more.</p>
+                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
