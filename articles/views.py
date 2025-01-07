@@ -76,6 +76,7 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = [
         "title",
         "body",
+        "image",
     ]
 
     def test_func(self):
@@ -99,6 +100,7 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     fields = [
         "title",
         "body",
+        "image",
     ]
 
     def form_valid(self, form):

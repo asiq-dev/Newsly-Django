@@ -1,9 +1,9 @@
 <!-- templates/article_detail.html -->
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% block title %}{{ object.title }}{% endblock title %}
 
 {% block content %}
-
 <div class="container py-5">
     <!-- Article Section -->
     <div class="card shadow-sm mb-4">

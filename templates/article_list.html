@@ -2,8 +2,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Articles{% endblock title %}
-{% block content %}
 
+{% block content %}
 <!-- new design  -->
 <div class="container my-5" id="news">
     <h2 class="mb-4">All News</h2>
@@ -12,7 +12,11 @@
         <!-- News Card 1 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="{% static 'images/news1.jpg' %}" class="card-img-top" alt="News 1">
+                {% if article.image %}
+                <img src="{{ article.image.url }}" class="card-img-top img-thumbnail fixed-img" alt="{{ article.title }}">
+                {% else %}
+                <img src="{% static 'images/news1.jpg' %}" class="card-img-top img-thumbnail fixed-img" alt="Default Image">
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ article.title }}</h5>
                     <span class="text-muted">by {{ article.author }} |
