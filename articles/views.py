@@ -21,9 +21,12 @@ from .forms import CommentForm
 # Create your views here.
 
 
-class ArticleListView(LoginRequiredMixin, ListView):
+class ArticleListView(ListView):
     model = Article
     template_name = "article_list.html"
+    # ordering = ['-date']
+    def get_queryset(self):
+        return Article.objects.all().order_by('-date')
 
 
 class CommentGet(DetailView):
@@ -36,7 +39,7 @@ class CommentGet(DetailView):
         return context
 
 
-class CommentPost(SingleObjectMixin, FormView):
+class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
     model = Article
     form_class = CommentForm
     template_name = "article_detail.html"
@@ -57,7 +60,7 @@ class CommentPost(SingleObjectMixin, FormView):
         return reverse("article_detail", kwargs={"pk": article.pk})
 
 
-class ArticleDetailView(LoginRequiredMixin, View):
+class ArticleDetailView(View):
     def get(self, request, *args, **kwargs):
         view = CommentGet.as_view()
         return view(request, *args, **kwargs)
