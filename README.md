@@ -10,12 +10,12 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
-      <a href="#installation">Features</a>
+      <a href="#Features">Features</a>
+    </li>
+    <li>
+      <a href="#Technologies">Technologies Used</a>
     </li>
     <li>
       <a href="#installation">Installation</a>
@@ -27,15 +27,11 @@
 </details>
 
 ## About The Project
-<!-- ![Alt text](employee.gif) -->
-
 A full-featured newspaper application developed with Django and Bootstrap, providing tools for publishing, editing, and managing news articles. The application is designed to offer a seamless experience with user authentication, and dynamic content management.
 
+**Sing-Up:** ![Alt text](sign-up.png)
+**Login:** ![Alt text](login.png)
 
-### Built With
-**Client:** HTML, Bootstrap
-
-**Server:** Python, Django
 
 ### Features
 - **User Authentication**
@@ -57,6 +53,19 @@ A full-featured newspaper application developed with Django and Bootstrap, provi
 - **Responsive Design**
   - Mobile-friendly layout using Bootstrap 5.
 
+### Technologies Used
+- **Backend:**
+  - Python with Django framework
+  - SQLite or any other database (PostgreSQL/MySQL)
+
+- **Frontend:**
+  - Bootstrap 5 for responsive design
+  - Custom CSS for additional styling
+
+- **Authentication:**
+  - Django's built-in authentication system
+  - Google OAuth integration with django-allauth
+
 ### Installation
 
 Installing and setting up this app.
@@ -64,16 +73,17 @@ Installing and setting up this app.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/asiq-dev/Employee-Management-CRUD-Using-Django.git
+   https://github.com/asiq-dev/Newsly-Django.git
    ```
 2. Create a virtual environment for this project
    ```sh
-   virtualenv empenv
+   python -m venv venv (linux)
    ```
 
 3. Activated virtual environment
    ```sh
-   empenv\Scripts\activate
+   source venv/bin/activate (linux)
+   venv\Scripts\activate (Windows)
    ```
 
 4. Install requirements files for this project
@@ -81,8 +91,12 @@ Installing and setting up this app.
    pip install -r requirements.txt
    ```
 
+5. Make a copy of local_settings.example to local_settings.py and put your info.(For send email, forgot password, reset password, sign-in, sign-up with google)
+   ```sh
+   local_setting.example to local_settings.py
+   ```
 
-5. We are done! let's run the server
+6. We are done! let's run the server
    ```sh
    python manage.py runserver
    ```
