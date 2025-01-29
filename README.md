@@ -21,7 +21,6 @@
       <a href="#installation">Installation</a>
     </li>
     <li><a href="#contact">Contact</a></li>    
-    
   </ol>
   
 </details>
@@ -29,8 +28,11 @@
 ## About The Project
 A full-featured newspaper application developed with Django and Bootstrap, providing tools for publishing, editing, and managing news articles. The application is designed to offer a seamless experience with user authentication, and dynamic content management.
 
-**Sing-Up:** ![Alt text](sign-up.png)
-**Login:** ![Alt text](login.png)
+**Home:** ![Alt text](readme_image/home.png)
+**News List:** ![Alt text](readme_image/news.png)
+**Single News:** ![Alt text](readme_image/single.png)
+**Sing-Up:** ![Alt text](readme_image/sign-up.png)
+**Login:** ![Alt text](readme_image/login.png)
 
 
 ### Features
